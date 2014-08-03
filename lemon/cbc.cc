@@ -25,6 +25,10 @@
 #include <coin/CbcModel.hpp>
 #include <coin/OsiSolverInterface.hpp>
 
+// HACK: For some reason when configured --with-coin= the CLP is enabled, but
+// this macro is unset.
+#define COIN_HAS_CLP
+
 #ifdef COIN_HAS_CLP
 #include "coin/OsiClpSolverInterface.hpp"
 #endif
